@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(make *)",
+      "Bash(mvn *)",
+      "Bash(pnpm run *)",
+      "Bash(pnpm test*)",
+      "Bash(node *)",
+      "Bash(curl *)",
+      "Bash(python3 *)",
+      "Bash(git *)",
+      "Bash(mkdir -p *)",
+      "Bash(sort *)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(grep *)",
+      "Bash(find *)",
+      "Bash(wc *)"
+    ]
+  }
+}

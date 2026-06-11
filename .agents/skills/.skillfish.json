@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "coding-agent",
+  "owner": "openclaw",
+  "repo": "openclaw",
+  "path": "skills/coding-agent",
+  "branch": "main",
+  "sha": "74a67fc7ac9f2ebba785c8b7be4770070d277e80",
+  "source": "manual"
+}

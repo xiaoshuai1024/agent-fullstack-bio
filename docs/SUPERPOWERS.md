@@ -8,7 +8,7 @@
 - `AGENTS.md` — 仓库级启动检查、工作流总览与子模块规则；其中「工作流」须与本节的 Superpowers 链对齐。
 - `docs/AGENT_RULES.md`「§3 文档与计划」— 计划文件归档到 `docs/FEATURES.md` 的约定，以及与本节技能触发时机配合使用。
 - [`docs/superpowers/PLAN_WRITING_CONTRACT.md`](superpowers/PLAN_WRITING_CONTRACT.md) — **`writing-plans` 产出 plan 的必选章节**与方案阶段 UX / 架构-E2E 自检要求。
-- [`docs/superpowers/AGENT_WORKFLOW_CONSTRAINTS.md`](superpowers/AGENT_WORKFLOW_CONSTRAINTS.md) — **执行阶段**：TDD、并行 subagent、E2E 失败排查顺序、`verification-before-completion`。
+- [`docs/dev/AGENT_WORKFLOW_CONSTRAINTS.md`](dev/AGENT_WORKFLOW_CONSTRAINTS.md) — **执行阶段**：TDD、并行 subagent、E2E 失败排查顺序、`verification-before-completion`。
 - [`docs/superpowers/templates/`](superpowers/templates/) — 《原始需求》模板与 PR 描述最小勾选项。
 
 ---
@@ -48,7 +48,7 @@ brainstorming → writing-plans → implementation → verification → requesti
 1. **brainstorming** — 理解需求，探索方案，提出设计
 2. **writing-plans** — 创建实现计划
 3. **implementation** — 按计划执行；**默认**拆分为独立子任务，**优先**起多个 subagent 并行执行
-4. **verification-before-completion** — 运行验证命令，确认通过；合并/验收前另须完成 [`AGENT_WORKFLOW_CONSTRAINTS.md`](superpowers/AGENT_WORKFLOW_CONSTRAINTS.md) **§5.1**（`architecture-review-e2e-tdd` + `ux-product-review` 与方案阶段同口径收口）
+4. **verification-before-completion** — 运行验证命令，确认通过；合并/验收前另须完成 [`AGENT_WORKFLOW_CONSTRAINTS.md`](dev/AGENT_WORKFLOW_CONSTRAINTS.md) **§5.1**（`architecture-review-e2e-tdd` + `ux-product-review` 与方案阶段同口径收口）
 5. **requesting-code-review** — 请求代码审查
 
 ---
@@ -103,13 +103,13 @@ receiving-code-review → implementation → verification
 
 **执行顺序**：多步骤特性开发一般为 `brainstorming`（澄清与方案）→ `writing-plans`（落盘计划）→ 再选 `executing-plans` 或 subagent 实现；**不要**把「写计划」和「执行计划」混在同一步里，除非用户明确只要其中一种。
 
-**方案契约与执行约束**：落盘 `docs/superpowers/plans/*.md` 时须遵守 [`PLAN_WRITING_CONTRACT.md`](superpowers/PLAN_WRITING_CONTRACT.md)（含需求溯源、**§4.0 按系统新增模块**、**§4.2 列表级交互链**、集成复用表、UX/架构自检、E2E 计划含 **§7.1 / §7.2** 等）；编码与收尾须遵守 [`AGENT_WORKFLOW_CONSTRAINTS.md`](superpowers/AGENT_WORKFLOW_CONSTRAINTS.md)（TDD、Console→Network→日志、并行条件、占位禁止）。
+**方案契约与执行约束**：落盘 `docs/superpowers/plans/*.md` 时须遵守 [`PLAN_WRITING_CONTRACT.md`](superpowers/PLAN_WRITING_CONTRACT.md)（含需求溯源、**§4.0 按系统新增模块**、**§4.2 列表级交互链**、集成复用表、UX/架构自检、E2E 计划含 **§7.1 / §7.2** 等）；编码与收尾须遵守 [`AGENT_WORKFLOW_CONSTRAINTS.md`](dev/AGENT_WORKFLOW_CONSTRAINTS.md)（TDD、Console→Network→日志、并行条件、占位禁止）。
 
 **与项目归档**：计划执行完毕、结论需纳入长期功能清单时，按 `docs/AGENT_RULES.md`「§3 文档与计划」收敛到 `docs/FEATURES.md` 并清理临时 plan 文件。
 
 ### 任务图 JSON（唯一事实源）
 
-每 feature 在 `docs/superpowers/tasks/<featureId>.json` 维护依赖、状态、子任务与并行就绪关系。新建或修改 `docs/superpowers/plans/` 下计划时须同步该 JSON，并在执行阶段更新状态。约定与十轮头脑风暴结论见 **[`docs/superpowers/tasks/SSOT-TASK-GRAPH-PLAN.md`](superpowers/tasks/SSOT-TASK-GRAPH-PLAN.md)**；校验：`node scripts/verify-plan-ssot.mjs validate <path>`。
+每 feature 在 `docs/superpowers/tasks/<featureId>.json` 维护依赖、状态、子任务与并行就绪关系。新建或修改 `docs/superpowers/plans/` 下计划时须同步该 JSON，并在执行阶段更新状态。约定与十轮头脑风暴结论见 **[`docs/dev/SSOT-TASK-GRAPH-PLAN.md`](dev/SSOT-TASK-GRAPH-PLAN.md)**；校验：`node scripts/verify-plan-ssot.mjs validate <path>`。
 
 ---
 

@@ -28,7 +28,6 @@ alwaysApply: false
 
 ## 参考文档
 
-- 枚举映射架构方案见 `docs/dev/display-value-convention.md`
 - Plan 阶段须在 `docs/superpowers/PLAN_WRITING_CONTRACT.md` §4 中写明枚举显示方案
 - 验收阶段须在 `AGENT_WORKFLOW_CONSTRAINTS.md` §5.2 中逐项核对
 

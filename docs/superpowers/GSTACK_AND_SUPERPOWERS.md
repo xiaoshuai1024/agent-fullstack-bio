@@ -1,6 +1,6 @@
 # GStack 与 Superpowers 配合（KangDou 工作流 · Agent 必读）
 
-本文档是 **GStack 方法论技能** 与 **Superpowers 工程体系** 在本仓的**唯一协作说明**；与 [`SUPERPOWERS.md`](../SUPERPOWERS.md)、[`PLAN_WRITING_CONTRACT.md`](PLAN_WRITING_CONTRACT.md)、[`AGENT_WORKFLOW_CONSTRAINTS.md`](AGENT_WORKFLOW_CONSTRAINTS.md) 一起读。
+本文档是 **GStack 方法论技能** 与 **Superpowers 工程体系** 在本仓的**唯一协作说明**；与 [`SUPERPOWERS.md`](../SUPERPOWERS.md)、[`PLAN_WRITING_CONTRACT.md`](PLAN_WRITING_CONTRACT.md)、[`AGENT_WORKFLOW_CONSTRAINTS.md`](../dev/AGENT_WORKFLOW_CONSTRAINTS.md) 一起读。
 
 ---
 
@@ -39,7 +39,7 @@ flowchart LR
 
 1. **澄清与收窄**：可用 **`office-hours`**、**`plan-ceo-review`**、**`plan-eng-review`**（按需）；产出或更新 **《原始需求》**（模板见 [`templates/gstack-raw-requirement-template.md`](templates/gstack-raw-requirement-template.md)）。
 2. **工程计划**：加载 **`writing-plans`**，遵守 [`PLAN_WRITING_CONTRACT.md`](PLAN_WRITING_CONTRACT.md)（需求溯源、集成复用表、UX/架构自检、E2E 计划、`taskGraph`）。
-3. **实现**：按 JSON 依赖执行；可并行 subagent 的条件见 [`SUPERPOWERS.md`](../SUPERPOWERS.md) 与 [`AGENT_WORKFLOW_CONSTRAINTS.md`](AGENT_WORKFLOW_CONSTRAINTS.md)。
+3. **实现**：按 JSON 依赖执行；可并行 subagent 的条件见 [`SUPERPOWERS.md`](../SUPERPOWERS.md) 与 [`AGENT_WORKFLOW_CONSTRAINTS.md`](../dev/AGENT_WORKFLOW_CONSTRAINTS.md)。
 4. **收尾**：**`verification-before-completion`**；合并前可用 **`review`**；端到端可用 **`qa`**；疑难故障用 **`investigate`**。
 5. **需求变更**：若实现中发现歧义，**先停**，回到 SSOT / plan「变更记录」，再改 JSON。
 
@@ -47,7 +47,7 @@ flowchart LR
 
 ## 3. 与仓库其它门禁的关系
 
-- **测试 / E2E / TDD**：以 [`AGENT_WORKFLOW_CONSTRAINTS.md`](AGENT_WORKFLOW_CONSTRAINTS.md)、`.agents/rules/kangdou-testing-coverage.md`、`architecture-review-e2e-tdd` skill 为准；GStack **不豁免**任何门禁。
+- **测试 / E2E / TDD**：以 [`AGENT_WORKFLOW_CONSTRAINTS.md`](../dev/AGENT_WORKFLOW_CONSTRAINTS.md)、`.agents/rules/kangdou-testing-coverage.md`、`architecture-review-e2e-tdd` skill 为准；GStack **不豁免**任何门禁。
 - **UX / 产品**：plan 内 UX 自检摘要；深度评审可用 **`/super-pm`**（[`ux-product-review`](../../.agents/skills/ux-product-review/SKILL.md)），与 GStack 互补而非重复。
 - **并行 subagent**：[`SUPERPOWERS.md`](../SUPERPOWERS.md)「多 Agent 协作」；Cursor **`Task` 默认 Auto** 见 [`docs/AGENT_RULES.md`](../AGENT_RULES.md)。
 
@@ -85,8 +85,8 @@ bash scripts/dev/install-gstack-skills-npx.sh /path/to.zip --all
 |------|------|
 | Superpowers 总流程 | [`docs/SUPERPOWERS.md`](../SUPERPOWERS.md) |
 | Plan 必选章节 | [`PLAN_WRITING_CONTRACT.md`](PLAN_WRITING_CONTRACT.md) |
-| 执行阶段 TDD / 并行 / 排查顺序 | [`AGENT_WORKFLOW_CONSTRAINTS.md`](AGENT_WORKFLOW_CONSTRAINTS.md) |
-| 任务图 JSON | [`tasks/SSOT-TASK-GRAPH-PLAN.md`](tasks/SSOT-TASK-GRAPH-PLAN.md) |
+| 执行阶段 TDD / 并行 / 排查顺序 | [`AGENT_WORKFLOW_CONSTRAINTS.md`](../dev/AGENT_WORKFLOW_CONSTRAINTS.md) |
+| 任务图 JSON | [`docs/dev/SSOT-TASK-GRAPH-PLAN.md`](../dev/SSOT-TASK-GRAPH-PLAN.md) |
 | 《原始需求》模板 | [`templates/gstack-raw-requirement-template.md`](templates/gstack-raw-requirement-template.md) |
 | PR 勾选 | [`templates/pr-checklist.md`](templates/pr-checklist.md) |
 

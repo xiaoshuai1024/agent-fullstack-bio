@@ -275,8 +275,8 @@ CLAUDEOF
   cat >> "$TARGET_DIR/CLAUDE.md" << 'CLAUDEOF'
 
 ## Agent 工具集
-- **Skills**: `.agents/skills/` — 80+ AI 技能
-- **Commands**: `.agents/commands/` — 28 个斜杠命令
+- **Skills**: `.agents/skills/` — Skill 工程包（写作规范 + 模板 + 方法论参考 + 专家 prompt）
+- **Commands**: `.agents/commands/` — 25 个斜杠命令
 - **Rules**: `.agents/rules/` — 行为约束
 - **规范**: `docs/dev/` — 开发规范文档
 - **工作流**: `docs/SUPERPOWERS.md` — 工作流总纲

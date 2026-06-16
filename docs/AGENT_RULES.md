@@ -83,12 +83,12 @@
 
 ## 5. 后端规则
 
-- **本地运行**：修改 **`backend/`**（Java、Flyway 脚本、`application*.yml`、资源等）后，**必须重启**本地 Spring Boot（结束占用 **`server.port`** 的旧进程后再启动；常见 **`SPRING_PROFILES_ACTIVE=local`** + **`mvn spring-boot:run`**），以便加载新代码、执行 Flyway、并与运行期元数据缓存一致。细则见 **`docs/JAVA_DEV_STANDARDS.md`**「七」与 **`.cursor/rules/kangdou-backend-restart-after-edit.mdc`**。
-- **接口与表结构**：新增或变更 REST 字段时须与 **`db/migration`** 及**实际连接库**对齐；禁止「缺列仍 200、数据没落库」。见 **`docs/JAVA_DEV_STANDARDS.md`**「四」与 **`.cursor/rules/kangdou-backend-api-schema-alignment.mdc`**。
+- **本地运行**：修改 **`backend/`**（Java、Flyway 脚本、`application*.yml`、资源等）后，**必须重启**本地 Spring Boot（结束占用 **`server.port`** 的旧进程后再启动；常见 **`SPRING_PROFILES_ACTIVE=local`** + **`mvn spring-boot:run`**），以便加载新代码、执行 Flyway、并与运行期元数据缓存一致。细则见 **`docs/dev/JAVA_DEV_STANDARDS.md`**「七」与 **`.cursor/rules/kangdou-backend-restart-after-edit.mdc`**。
+- **接口与表结构**：新增或变更 REST 字段时须与 **`db/migration`** 及**实际连接库**对齐；禁止「缺列仍 200、数据没落库」。见 **`docs/dev/JAVA_DEV_STANDARDS.md`**「四」与 **`.cursor/rules/kangdou-backend-api-schema-alignment.mdc`**。
 - **日志**：
   - 第三方 API 调用必须打日志（INFO 摘要 + WARN/ERROR 失败日志）
   - 禁止输出密钥、`secret`、完整 `access_token`、用户敏感标识
-- **接口测试与交工前验证（MUST）**：新增/修改接口须同步 **`MockMvc`/`*IT` 等可执行测试**，合并前 **`mvn verify`**（或团队约定的 `mvn test` 范围）须通过；且在**宣称任务完成或提交 PR 前**，还须完成至少一项**可观测**的接口验证（Swagger **Try it out**、对本地已启动后端的 **`curl`/HTTP 调用**、或消费端页面 **Network** 确认状态码与响应体），**禁止仅靠编译无报错即交工**。全文见 **`.cursor/rules/kangdou-api-verify-before-handoff.mdc`** 与 **`docs/JAVA_DEV_STANDARDS.md`**「二」。
+- **接口测试与交工前验证（MUST）**：新增/修改接口须同步 **`MockMvc`/`*IT` 等可执行测试**，合并前 **`mvn verify`**（或团队约定的 `mvn test` 范围）须通过；且在**宣称任务完成或提交 PR 前**，还须完成至少一项**可观测**的接口验证（Swagger **Try it out**、对本地已启动后端的 **`curl`/HTTP 调用**、或消费端页面 **Network** 确认状态码与响应体），**禁止仅靠编译无报错即交工**。全文见 **`.cursor/rules/kangdou-api-verify-before-handoff.mdc`** 与 **`docs/dev/JAVA_DEV_STANDARDS.md`**「二」。
 - **Swagger 约束（架构级）**：新增接口必须同时补齐 Swagger 信息，不得"先上接口后补文档"
 - **Swagger 门禁**：CI "只告警不阻断"，出现告警须优先补齐 Swagger 描述后再提交
 

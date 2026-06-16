@@ -6,7 +6,7 @@ alwaysApply: false
 
 # E2E 执行契约（高优先级 · MUST）
 
-本规则与 [`docs/dev/e2e-testing-agent-guide.md`](../../docs/dev/e2e-testing-agent-guide.md) **§2.5**、[`.agents/rules/kangdou-testing-coverage.md`](../../.agents/rules/kangdou-testing-coverage.md)、[`docs/superpowers/PLAN_WRITING_CONTRACT.md`](../../docs/superpowers/PLAN_WRITING_CONTRACT.md) **§7**、[`docs/superpowers/AGENT_WORKFLOW_CONSTRAINTS.md`](../../docs/superpowers/AGENT_WORKFLOW_CONSTRAINTS.md) **§2.4** 一致；执行 E2E、写 plan、TDD 收口时**必须**遵守。冲突时以**更严格**条文为准。
+本规则与 [`docs/dev/e2e-testing-agent-guide.md`](../../docs/dev/e2e-testing-agent-guide.md) **§2.5**、[`.agents/rules/kangdou-testing-coverage.md`](../../.agents/rules/kangdou-testing-coverage.md)、[`docs/superpowers/PLAN_WRITING_CONTRACT.md`](../../docs/superpowers/PLAN_WRITING_CONTRACT.md) **§7**、[`docs/dev/AGENT_WORKFLOW_CONSTRAINTS.md`](AGENT_WORKFLOW_CONSTRAINTS.md) **§2.4** 一致；执行 E2E、写 plan、TDD 收口时**必须**遵守。冲突时以**更严格**条文为准。
 
 ## 摘要（Agent 不可跳过）
 

@@ -11,8 +11,8 @@ alwaysApply: false
 编辑或新建 `docs/superpowers/plans/**/*.md` 时：
 
 1. 编写前加载 **[PLAN_WRITING_CONTRACT.md](docs/superpowers/PLAN_WRITING_CONTRACT.md)**，核对必选章节（需求溯源、**§0.1 分支与仓库（方案阶段 / 执行阶段）**、**§4.0 按系统新增功能模块表**、**§4.2 列表级交互链路**、**§4.3 页面结构展示与高保真原型**、集成复用表（§5）、UX 自检摘要（§4.1）、架构/E2E 自检（§6.1）、E2E 计划含 P0、**§7.1 跨端主路径表**、**§7.2 脚本保障逻辑**、文首 `taskGraph`）。
-2. 执行与收尾对齐 **[AGENT_WORKFLOW_CONSTRAINTS.md](docs/superpowers/AGENT_WORKFLOW_CONSTRAINTS.md)**（TDD、并行 subagent 条件、Console→Network→后端日志、verification）。
-3. 任务状态以 **[SSOT-TASK-GRAPH-PLAN.md](docs/superpowers/tasks/SSOT-TASK-GRAPH-PLAN.md)** 与对应 JSON 为准；校验 `node scripts/verify-plan-ssot.mjs validate <path>`。
+2. 执行与收尾对齐 **[AGENT_WORKFLOW_CONSTRAINTS.md](AGENT_WORKFLOW_CONSTRAINTS.md)**（TDD、并行 subagent 条件、Console→Network→后端日志、verification）。
+3. 任务状态以 **[SSOT-TASK-GRAPH-PLAN.md](SSOT-TASK-GRAPH-PLAN.md)** 与对应 JSON 为准；校验 `node scripts/verify-plan-ssot.mjs validate <path>`。
 4. **范围与质量（对齐 `/plan-template`）**：采用**最完整可交付策略**——需求内功能**不得静默跳过**；同时**控制功能膨胀**——凡非需求原文或本期目标所必需的能力，须列入「**明确不做 / 后续迭代**」并说明理由，禁止无边界镀金。禁止假绿、占位、骨架页、以 raw JSON 顶替用户页面；页面交互须与 **§4.2 / §4.3**、E2E 计划可验收对齐。详见 **[plan-template.md](.agents/commands/plan-template.md)**。
 5. **多维结论落盘**：若用户要求将并行多视角结论写入本 plan，须按 **[10-bs.md](.agents/commands/10-bs.md)**（**`/10-bs`**）执行：仅将**综合结论**写入目标文档的约定章节，不得把分轮过程堆进 plan。
 6. **编写方案时可按需加载的 skills**（路径以仓库为准）：**`architecture-review-e2e-tdd`**（`.agents/skills/architecture-review-e2e-tdd/SKILL.md`）、**`ux-product-review`**（与 **`/super-pm`**）、**`writing-plans`**（`.agents/skills/writing-plans/SKILL.md`）、**`brainstorming`**（需求含混或创新点前）、**`plan-eng-review`** / **`plan-ceo-review`**（锁架构或调范围时）、**`ui-spec-enforcer`**（前端/UI 规范对照）、**`ten-round-brainstorm`**（与 **`/10-bs`** 配套）。

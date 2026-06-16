@@ -1,0 +1,1 @@
+../../.agents/commands/mp-e2e.md

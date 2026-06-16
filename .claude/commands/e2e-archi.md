@@ -1,0 +1,1 @@
+../../.agents/commands/e2e-archi.md

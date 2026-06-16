@@ -66,6 +66,19 @@ else
   echo "   ✅ 复制完成"
 fi
 
+# Claude Code 只识别 .claude/commands/ 下的斜杠命令；命令源在 .agents/commands/，
+# 故为目标项目建立 .claude/commands → .agents/commands 的相对符号链接（幂等）。
+echo "🔗 建立 .claude/commands 命令链接 ..."
+mkdir -p "$TARGET_DIR/.claude/commands"
+cmd_count=0
+for src in "$TARGET_DIR/.agents/commands/"*.md; do
+  [ -e "$src" ] || continue
+  name="$(basename "$src")"
+  ln -sf "../../.agents/commands/$name" "$TARGET_DIR/.claude/commands/$name"
+  cmd_count=$((cmd_count + 1))
+done
+echo "   ✅ 已链接 $cmd_count 个命令（.claude/commands → .agents/commands）"
+
 echo "📦 [3/4] 注入 docs/ ..."
 if [ -d "$TARGET_DIR/docs" ]; then
   for doc in SUPERPOWERS.md GIT_WORKFLOW.md AGENT_RULES.md PROJECT_DOCUMENT_WRITING_SPEC.md UI_SPEC_FOR_AGENTS.md interaction-preferences.md; do

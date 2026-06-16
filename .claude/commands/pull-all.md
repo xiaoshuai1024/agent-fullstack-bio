@@ -1,0 +1,1 @@
+../../.agents/commands/pull-all.md

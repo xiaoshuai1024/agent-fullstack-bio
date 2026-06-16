@@ -46,7 +46,7 @@
 
 ### 2.5 E2E 执行契约（高优先级 · MUST）
 
-本节与 [`docs/dev/kangdou-e2e-execution-contract.md`](../../docs/dev/kangdou-e2e-execution-contract.md)、[`docs/superpowers/PLAN_WRITING_CONTRACT.md`](../superpowers/PLAN_WRITING_CONTRACT.md) §7、[`docs/superpowers/AGENT_WORKFLOW_CONSTRAINTS.md`](../superpowers/AGENT_WORKFLOW_CONSTRAINTS.md) §2.4 对齐；Agent **运行、调试、编写或修改 E2E** 及 **宣称合入门禁通过** 时均须遵守。
+本节与 [`docs/dev/kangdou-e2e-execution-contract.md`](../../docs/dev/kangdou-e2e-execution-contract.md)、[`docs/superpowers/PLAN_WRITING_CONTRACT.md`](../superpowers/PLAN_WRITING_CONTRACT.md) §7、[`docs/dev/AGENT_WORKFLOW_CONSTRAINTS.md`](AGENT_WORKFLOW_CONSTRAINTS.md) §2.4 对齐；Agent **运行、调试、编写或修改 E2E** 及 **宣称合入门禁通过** 时均须遵守。
 
 #### 2.5.1 禁止假绿与禁止降级（MUST）
 

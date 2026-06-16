@@ -8,14 +8,14 @@ alwaysApply: true
 
 凡**新增或修改可执行业务逻辑**（API、鉴权、状态、UI 行为、构建产物），须在同一 PR / 同一任务内补齐测试，禁止「只改代码、零测试」合并。
 
-**E2E 执行高优先级契约**（禁止假绿、禁止降级已约定脚本、执行会话内**测试代码冻结**、plan **跨端主路径与脚本保障逻辑**）：见 [`docs/dev/kangdou-e2e-execution-contract.md`](../../docs/dev/kangdou-e2e-execution-contract.md) 与 [`docs/dev/e2e-testing-agent-guide.md`](../../docs/dev/e2e-testing-agent-guide.md) **§2.5**；与 [`docs/superpowers/PLAN_WRITING_CONTRACT.md`](../../docs/superpowers/PLAN_WRITING_CONTRACT.md) **§7.1、§7.2**、[`docs/superpowers/AGENT_WORKFLOW_CONSTRAINTS.md`](../../docs/superpowers/AGENT_WORKFLOW_CONSTRAINTS.md) **§2.4** 对齐。
+**E2E 执行高优先级契约**（禁止假绿、禁止降级已约定脚本、执行会话内**测试代码冻结**、plan **跨端主路径与脚本保障逻辑**）：见 [`docs/dev/kangdou-e2e-execution-contract.md`](../../docs/dev/kangdou-e2e-execution-contract.md) 与 [`docs/dev/e2e-testing-agent-guide.md`](../../docs/dev/e2e-testing-agent-guide.md) **§2.5**；与 [`docs/superpowers/PLAN_WRITING_CONTRACT.md`](../../docs/superpowers/PLAN_WRITING_CONTRACT.md) **§7.1、§7.2**、[`docs/dev/AGENT_WORKFLOW_CONSTRAINTS.md`](../../docs/dev/AGENT_WORKFLOW_CONSTRAINTS.md) **§2.4** 对齐。
 
 ## 分系统要求
 
 ### `backend/`（Spring Boot）
 
 - **优先**：为变更点补充 **`src/test/java/**/*Test.java`**（Surefire，不启动完整容器时尽量用切片 / Mockito）。
-- **接口与 Flyway**：已有或新增 **`src/test/java/**/*IT.java`**（Failsafe + 本机 MySQL，与联调 **共用同一库**，默认 **`kddev`**，继承 `AbstractMysqlIntegrationIT`）；**不**使用 Docker/Testcontainers。连接通过 **`SPRING_DATASOURCE_*`** 与 `src/test/resources/application.yml` 对齐（见 `docs/JAVA_DEV_STANDARDS.md`）。合并前 **`mvn -q verify`** 须通过。
+- **接口与 Flyway**：已有或新增 **`src/test/java/**/*IT.java`**（Failsafe + 本机 MySQL，与联调 **共用同一库**，默认 **`kddev`**，继承 `AbstractMysqlIntegrationIT`）；**不**使用 Docker/Testcontainers。连接通过 **`SPRING_DATASOURCE_*`** 与 `src/test/resources/application.yml` 对齐（见 `docs/dev/JAVA_DEV_STANDARDS.md`）。合并前 **`mvn -q verify`** 须通过。
 - 安全切面、上下文等横切逻辑：须有 **至少一类** 可执行测试（单测或 IT）覆盖允许/拒绝路径。
 
 #### Mockito 使用规范（MUST）

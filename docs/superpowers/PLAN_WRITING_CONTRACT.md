@@ -1,6 +1,6 @@
 # 方案编写契约（`writing-plans` 产出物）
 
-本文档定义 **`docs/superpowers/plans/*.md`** 在「大规模编码前」**必须**包含的章节与质量条，与 [docs/SUPERPOWERS.md](../SUPERPOWERS.md)、[docs/superpowers/tasks/SSOT-TASK-GRAPH-PLAN.md](tasks/SSOT-TASK-GRAPH-PLAN.md)、[AGENT_WORKFLOW_CONSTRAINTS.md](AGENT_WORKFLOW_CONSTRAINTS.md)、[GSTACK_AND_SUPERPOWERS.md](GSTACK_AND_SUPERPOWERS.md)（需求侧 GStack skill 与计划如何衔接）配合使用。
+本文档定义 **`docs/superpowers/plans/*.md`** 在「大规模编码前」**必须**包含的章节与质量条，与 [docs/SUPERPOWERS.md](../SUPERPOWERS.md)、[docs/dev/SSOT-TASK-GRAPH-PLAN.md](../dev/SSOT-TASK-GRAPH-PLAN.md)、[AGENT_WORKFLOW_CONSTRAINTS.md](../dev/AGENT_WORKFLOW_CONSTRAINTS.md)、[GSTACK_AND_SUPERPOWERS.md](GSTACK_AND_SUPERPOWERS.md)（需求侧 GStack skill 与计划如何衔接）配合使用。
 
 加载 **`writing-plans`** 编写或实质性修改 plan 时，须满足本契约；任务依赖与状态以 **`docs/superpowers/tasks/<featureId>.json`** 为唯一事实源（SSOT）。
 
@@ -15,7 +15,7 @@
 
 ### 方案阶段与两门禁 Skill（MUST）
 
-大规模编码前，方案须**同时**可被 **[`architecture-review-e2e-tdd`](../../.agents/skills/architecture-review-e2e-tdd/SKILL.md)** 与 **[`ux-product-review`](../../.agents/skills/ux-product-review/SKILL.md)** 核对——不要求把对话全文贴进 plan，但须在下列章节给出**可对齐 skill 模板的结构化摘要**（见 **§4.0、§4.1、§4.2**、§6.1、**§7、§7.2**），并在验收阶段按 [AGENT_WORKFLOW_CONSTRAINTS.md](AGENT_WORKFLOW_CONSTRAINTS.md)「§5.1」再做一轮收口。
+大规模编码前，方案须**同时**可被 **[`architecture-review-e2e-tdd`](../../.agents/skills/architecture-review-e2e-tdd/SKILL.md)** 与 **[`ux-product-review`](../../.agents/skills/ux-product-review/SKILL.md)** 核对——不要求把对话全文贴进 plan，但须在下列章节给出**可对齐 skill 模板的结构化摘要**（见 **§4.0、§4.1、§4.2**、§6.1、**§7、§7.2**），并在验收阶段按 [AGENT_WORKFLOW_CONSTRAINTS.md](../dev/AGENT_WORKFLOW_CONSTRAINTS.md)「§5.1」再做一轮收口。
 
 | Skill | 方案阶段落点（本契约） | 推荐触发方式 |
 |--------|------------------------|--------------|
@@ -181,7 +181,7 @@
 ## 8. TDD 与执行约定
 
 - **分支：** 开始大规模编码前须完成 **§0.1** 所列「执行阶段」分支切换或新建；与 [docs/GIT_WORKFLOW.md](../GIT_WORKFLOW.md) §〇.4–〇.5 一致。
-- 声明本特性遵循 [AGENT_WORKFLOW_CONSTRAINTS.md](AGENT_WORKFLOW_CONSTRAINTS.md) 第 2、3 节（先测后码、排查顺序）。
+- 声明本特性遵循 [AGENT_WORKFLOW_CONSTRAINTS.md](../dev/AGENT_WORKFLOW_CONSTRAINTS.md) 第 2、3 节（先测后码、排查顺序）。
 - 若使用并行 subagent，在 plan 中简述 **与 JSON 任务 id 的对应**及并行前提（契约冻结等）。
 
 ---
@@ -200,7 +200,7 @@
 
 ## 11. For agentic workers（推荐固定一句）
 
-> **For agentic workers:** REQUIRED SUB-SKILL: `subagent-driven-development`（推荐）或 `executing-plans`；按 checkbox 与任务图 JSON 推进；执行纪律见 [AGENT_WORKFLOW_CONSTRAINTS.md](AGENT_WORKFLOW_CONSTRAINTS.md)。
+> **For agentic workers:** REQUIRED SUB-SKILL: `subagent-driven-development`（推荐）或 `executing-plans`；按 checkbox 与任务图 JSON 推进；执行纪律见 [AGENT_WORKFLOW_CONSTRAINTS.md](../dev/AGENT_WORKFLOW_CONSTRAINTS.md)。
 
 ---
 

@@ -177,14 +177,14 @@ description: 以 TDD 模式推进当前任务：红→绿→重构
 ```
 项目根目录/
 ├── .agents/                          ← Agent 行为定义
-│   ├── skills/                       ← 技能库（Agent 能力）
-│   │   ├── tdd/SKILL.md             ← TDD 技能定义
-│   │   ├── systematic-debugging/     ← 系统排障技能
-│   │   └── ... (80+)
+│   ├── skills/                       ← 技能库（写作规范 / 模板 / 方法论参考）
+│   │   ├── SKILL.md                 ← 技能写作规范
+│   │   ├── references/              ← 方法论参考
+│   │   └── specialists/             ← 专家 prompt
 │   ├── commands/                     ← 命令（触发入口）
 │   │   ├── tdd.md                   ← /tdd 命令
 │   │   ├── plan-template.md         ← /plan-template 命令
-│   │   └── ... (28)
+│   │   └── ... (25)
 │   └── rules/                        ← 规则（约束）
 │       ├── agent-hooks.md           ← Agent 钩子规则
 │       └── self-improve.md          ← 自我改进规则
@@ -688,8 +688,8 @@ cp agent-fullstack-bio/docs/dev/e2e-test-style-guide.md /your-project/docs/
 ```markdown
 ## Agent 工具集
 
-- **Skills**: `.agents/skills/` — 80+ AI 技能
-- **Commands**: `.agents/commands/` — 28 个斜杠命令
+- **Skills**: `.agents/skills/` — Skill 工程包（写作规范 + 模板 + 方法论参考 + 专家 prompt）
+- **Commands**: `.agents/commands/` — 25 个斜杠命令
 - **Rules**: `.agents/rules/` — 行为约束
 - **规范**: `docs/dev/` — 开发规范文档
 - **工作流**: `docs/SUPERPOWERS.md` — 工作流总纲
@@ -706,24 +706,19 @@ agent-fullstack-bio/
 │
 ├── .agents/                             ← Agent 行为定义
 │   ├── .cursorrules                     ← Cursor 规则
-│   ├── skills/                          ← 80+ AI 技能
-│   │   ├── tdd/SKILL.md                ← TDD 红绿循环
-│   │   ├── systematic-debugging/        ← 系统排障
-│   │   ├── architecture-review-e2e-tdd/ ← 架构审查 + E2E
-│   │   ├── dispatching-parallel-agents/ ← 并行 agent 派发
-│   │   ├── ten-round-brainstorm/        ← 十轮头脑风暴
-│   │   ├── ux-product-review/           ← UX 产品审查
-│   │   ├── coding-agent/               ← 编码子 agent
-│   │   ├── writing-plans/              ← 方案编写
-│   │   ├── executing-plans/            ← 方案执行
-│   │   └── ... (80+)
-│   ├── commands/                        ← 28 个斜杠命令
+│   ├── skills/                          ← Skill 工程包
+│   │   ├── SKILL.md / SKILL.md.tmpl    ← 技能写作规范与模板
+│   │   ├── references/                 ← 方法论参考（agent 协作 / 工具）
+│   │   ├── specialists/                ← 专家 prompt（安全 / 性能 / 契约…）
+│   │   ├── templates/                  ← 技能与报告模板
+│   │   └── scripts/                    ← 工具脚本（compress / benchmark）
+│   ├── commands/                        ← 25 个斜杠命令
 │   │   ├── plan-template.md            ← /plan-template
 │   │   ├── kd-review.md               ← /kd-review
 │   │   ├── tdd.md                     ← /tdd
 │   │   ├── super-pm.md                ← /super-pm
 │   │   ├── 10-bs.md                   ← /10-bs
-│   │   └── ... (28)
+│   │   └── ... (25)
 │   └── rules/                           ← 通用规则
 │       ├── agent-hooks.md              ← Agent 钩子
 │       └── self-improve.md             ← 自我改进

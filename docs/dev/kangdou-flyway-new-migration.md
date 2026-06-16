@@ -52,7 +52,7 @@ mvn -q compile         # 编译通过
 ### 参考文档
 
 - 权威规范：`docs/dev/kangdou-flyway-migration-standards.md`（v3）
-- 多人共用 MySQL 规范：`docs/JAVA_DEV_STANDARDS.md`
+- 多人共用 MySQL 规范：`docs/dev/JAVA_DEV_STANDARDS.md`
 - ~~号段配置 `flyway-segment-assignments.json`~~ / ~~`flyway-multi-dev-playbook.md`~~ 已废弃
 
 ---
